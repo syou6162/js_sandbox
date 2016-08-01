@@ -24,5 +24,8 @@ module Github {
     }
     window.onload = () => {
 	getRepositories();
-    }
+    };
+    window.addEventListener("keydown", (event) => {
+	console.log(event.key);
+    }, false);
 }
