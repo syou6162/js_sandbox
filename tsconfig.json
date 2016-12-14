@@ -1,0 +1,9 @@
+{
+    "files": [
+        "github.ts"
+    ],
+    "compilerOptions": {
+	"module": "commonjs",
+        "target": "es2015"
+    }
+}
