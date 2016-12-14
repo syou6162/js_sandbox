@@ -10,7 +10,7 @@ module Github {
 	repos.appendChild(tmp);
 	x += 1;
     }
-    function getRepositories() {
+    export function getRepositories() {
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', encodeURI('https://api.github.com/users/syou6162/repos'), false);
 	xhr.onload = function() {
@@ -22,10 +22,13 @@ module Github {
 	};
 	xhr.send();
     }
-    window.onload = () => {
-	getRepositories();
-    };
     window.addEventListener("keydown", (event) => {
 	console.log(event.key);
     }, false);
 }
+
+let button = document.createElement('button');
+button.textContent = "Push this button!";
+button.onclick = Github.insertRepositoryName;
+document.body.appendChild(button);
+Github.getRepositories();
